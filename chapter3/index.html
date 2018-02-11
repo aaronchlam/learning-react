@@ -30,18 +30,16 @@
       var HelloWorld = React.createClass({
         render: function() { 
           return (
-            <p>Hello, world!</p> 
+            <p>Hello, {this.props.greetTarget}!</p> 
           );
         }
       });
 
       ReactDOM.render(
         <div>
-          <HelloWorld/>
-          <HelloWorld/>
-          <HelloWorld/>
-          <HelloWorld/>
-          <HelloWorld/>
+          <HelloWorld greetTarget="Batman"/>
+          <HelloWorld greetTarget="Ironman"/>
+          <HelloWorld greetTarget="Superman"/>
         </div>,
         container
       )
