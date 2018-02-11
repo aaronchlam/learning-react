@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React! React! React!</title>
+
+    <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+    <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.min.js"></script>
+
+    <style>
+      #container {
+        padding: 50px;
+        background-color: #EEE;
+
+      }
+      #container h1 {
+        font-size: 48px;
+        font-family: sans-serif;
+        color: #0080A8;
+
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="container"></div>
+    <script type="text/babel">
+      var container = document.querySelector("#container");
+
+      var HelloWorld = React.createClass({
+        render: function() { 
+          return (
+            <p>Hello, {this.props.greetTarget}!</p> 
+          );
+        }
+      });
+
+      var Buttonify = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <button type={this.props.behaviour}>{this.props.children}</button>
+            </div>
+          );
+        }
+      })
+
+      ReactDOM.render(
+        <div>
+          <HelloWorld greetTarget="Batman"/>
+          <HelloWorld greetTarget="Ironman"/>
+          <HelloWorld greetTarget="Superman"/>
+          <Buttonify behaviour="submit">SEND DATA</Buttonify>
+        </div>,
+        container
+      )
+    </script>
+  </body>
+</html>
