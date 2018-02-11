@@ -35,11 +35,22 @@
         }
       });
 
+      var Buttonify = React.createClass({
+        render: function() {
+          return (
+            <div>
+              <button type={this.props.behaviour}>{this.props.children}</button>
+            </div>
+          );
+        }
+      })
+
       ReactDOM.render(
         <div>
           <HelloWorld greetTarget="Batman"/>
           <HelloWorld greetTarget="Ironman"/>
           <HelloWorld greetTarget="Superman"/>
+          <Buttonify behaviour="submit">SEND DATA</Buttonify>
         </div>,
         container
       )
