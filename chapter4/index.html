@@ -30,12 +30,15 @@
     <script type="text/babel">
       var Letter = React.createClass({
         render: function() {
-            return (
-              <div className="letter">
-                {this.props.children}
-              </div>
-            )
+          var letterStyle = {
+            
           }
+          return (
+            <div>
+              {this.props.children}
+            </div>
+          )
+        }
       });
 
       var container = document.querySelector("#container");
